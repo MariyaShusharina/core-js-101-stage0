@@ -224,8 +224,24 @@ function getRectangleString(width, height) {
  *    => 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm'
  *
  */
-function encodeToRot13(/* str */) {
-  throw new Error('Not implemented');
+function encodeToRot13(str) {
+  const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.split(
+    ''
+  );
+  const encoded = 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm'.split(
+    ''
+  );
+  const strArr = str.split('');
+  let retArr = str.split('');
+  retArr = str.split('');
+  for (let i = 0; i < str.length; i += 1) {
+    for (let j = 0; j < alphabet.length; j += 1) {
+      if (strArr[i] === alphabet[j]) {
+        retArr[i] = encoded[j];
+      }
+    }
+  }
+  return retArr.join('');
 }
 
 /**
